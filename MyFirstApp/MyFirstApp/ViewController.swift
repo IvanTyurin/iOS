@@ -31,12 +31,20 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func newGameBtn(_ sender: UIButton) {
+        iosNum = Int.random(in: 0...100)
+        gameBtnStates.isEnabled = true
+        hiddenBtn.isHidden = true
+        mainText.text = "Давай ещё разок?"
+        cheat.text = String(iosNum)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        mainText.text = "Испытай свою удачу..."
+        cheat.text = String(iosNum)
     }
-
-
 }
 

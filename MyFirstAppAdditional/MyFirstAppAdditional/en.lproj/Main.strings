@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "Новая игра!"; ObjectID = "F8w-j9-LW7"; */
+"F8w-j9-LW7.normalTitle" = "Новая игра!";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MNh-tg-nof"; */
+"MNh-tg-nof.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Число"; ObjectID = "R3R-Jc-J0v"; */
+"R3R-Jc-J0v.placeholder" = "Число";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hjF-gg-LQs"; */
+"hjF-gg-LQs.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Попытка"; ObjectID = "olY-0S-fux"; */
+"olY-0S-fux.normalTitle" = "Попытка";

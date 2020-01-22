@@ -59,7 +59,6 @@
                         <outlet property="gameBtnStates" destination="olY-0S-fux" id="ZXC-uX-QIQ"/>
                         <outlet property="hiddenBtn" destination="F8w-j9-LW7" id="Sq4-65-FCT"/>
                         <outlet property="mainText" destination="hjF-gg-LQs" id="e31-EZ-aNM"/>
-                        <outlet property="mainVieaw" destination="hjF-gg-LQs" id="sBy-66-K7D"/>
                         <outlet property="userText" destination="R3R-Jc-J0v" id="ZZO-Ab-Nf7"/>
                     </connections>
                 </viewController>

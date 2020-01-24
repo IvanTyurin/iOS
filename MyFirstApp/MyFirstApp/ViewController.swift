@@ -19,16 +19,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var gameBtnStates: UIButton!
     
     @IBAction func gameBtn(_ sender: UIButton) {
-        let userNum = Int(userText.text!)!
-        if  userNum == iosNum || userNum == 42 {
-            mainText.text = "Удача!"
-            hiddenBtn.isHidden = false
-            gameBtnStates.isEnabled = false
-        } else if userNum > iosNum {
-            mainText.text = "Перебор!"
+        if let bufNum = userText.text {
+           let userNum = Int(bufNum) ?? 0
+           if  userNum == iosNum || userNum == 42 {
+                mainText.text = "Удача!"
+                hiddenBtn.isHidden = false
+                gameBtnStates.isEnabled = false
+            } else if userNum > iosNum {
+                mainText.text = "Перебор!"
+            } else {
+                mainText.text = "Давай больше!"
+            }
         } else {
-            mainText.text = "Давай больше!"
+            mainText.text = "Ты забыл число!"
         }
+
     }
     
     @IBAction func newGameBtn(_ sender: UIButton) {

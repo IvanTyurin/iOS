@@ -18,6 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var gameBtnStates: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        mainText.text = "Испытай свою удачу..."
+        cheat.text = String(iosNum)
+    }
+    
     @IBAction func gameBtn(_ sender: UIButton) {
         if let bufNum = userText.text {
            let userNum = Int(bufNum) ?? 0
@@ -41,14 +48,6 @@ class ViewController: UIViewController {
         gameBtnStates.isEnabled = true
         hiddenBtn.isHidden = true
         mainText.text = "Давай ещё разок?"
-        cheat.text = String(iosNum)
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        mainText.text = "Испытай свою удачу..."
         cheat.text = String(iosNum)
     }
 }

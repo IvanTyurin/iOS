@@ -10,14 +10,21 @@ import UIKit
 
 class GameModel: UITabBarController {
     
-    var iosNum = 0
-    var minValue = 10
-    var maxValue = 50
+    var tryCounter = 0
+    var bestTry = 0
+    var minValue = 0
+    var maxValue = 0
+    
+    var history: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
 

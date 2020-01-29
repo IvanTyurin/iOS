@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var maxValue = 0
     var iosNum = 0
     var tryNumbers: Int = 0
+    var historyBuf: [Int] = []
     
     @IBOutlet weak var cheat: UILabel!
     @IBOutlet weak var mainText: UILabel!
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewDidAppear(true)
         // Do any additional setup after loading the view.
     }
     
@@ -33,8 +35,16 @@ class ViewController: UIViewController {
         
         if minValue == maxValue {
             mainText.text = "Настрой рандом, друже"
+            userText.isEnabled = false
+            gameBtnStates.isEnabled = false
+            gameCounter.text = "Количество попыток: " + String(tryNumbers)
+            
         } else {
             iosNum = getRandom(minValue, maxValue)
+            userText.isEnabled = true
+            gameBtnStates.isEnabled = true
+            
+            userText.placeholder = "от " + String(minValue) + " до " + String(maxValue)
             mainText.text = "Испытай свою удачу..."
             cheat.text = String(iosNum)
             tryNumbers = 0
@@ -43,15 +53,30 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        let tabBar = tabBarController as! GameModel
+        tabBar.history += historyBuf
+        historyBuf = []
+    }
+    
     @IBAction func gameBtn(_ sender: UIButton) {
+        let tabBar = tabBarController as! GameModel
+        
         if let bufNum = userText.text {
             let userNum = Int(bufNum) ?? 0
+            userText.text = nil
             tryNumbers += 1
             gameCounter.text = "Количество попыток: " + String(tryNumbers)
+            historyBuf.append(userNum)
+            
             if  userNum == iosNum || userNum == 42 {
                 mainText.text = "Удача!"
                 hiddenBtn.isHidden = false
                 gameBtnStates.isEnabled = false
+                tabBar.tryCounter += tryNumbers
+                if tabBar.bestTry > tryNumbers || tabBar.bestTry == 0 {
+                    tabBar.bestTry = tryNumbers
+                }
             } else if userNum > iosNum {
                 mainText.text = "Перебор!"
             } else {
@@ -60,11 +85,6 @@ class ViewController: UIViewController {
         } else {
             mainText.text = "Ты забыл число!"
         }
-        
-        print("*******************", "\n")
-        print(minValue)
-        print(maxValue)
-        print("*******************", "\n")
     }
     
     @IBAction func newGameBtn(_ sender: UIButton) {
@@ -73,8 +93,6 @@ class ViewController: UIViewController {
         hiddenBtn.isHidden = true
         mainText.text = "Давай ещё разок?"
         cheat.text = String(iosNum)
-        /*tryNumbers = 0
-        gameCounter.text = "Количество попыток: " + String(tryNumbers)*/
     }
     
     func getRandom(_ min: Int, _ max: Int) -> Int {

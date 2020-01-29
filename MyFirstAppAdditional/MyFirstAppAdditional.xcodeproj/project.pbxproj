@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		094312FC23E197AB0057D1D7 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094312FB23E197AB0057D1D7 /* GameModel.swift */; };
+		094312FE23E1D4510057D1D7 /* StatisticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094312FD23E1D4510057D1D7 /* StatisticVC.swift */; };
 		097175B823D8DF1300072A06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097175B723D8DF1300072A06 /* AppDelegate.swift */; };
 		097175BA23D8DF1300072A06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097175B923D8DF1300072A06 /* SceneDelegate.swift */; };
 		097175BC23D8DF1300072A06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097175BB23D8DF1300072A06 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		094312FB23E197AB0057D1D7 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		094312FD23E1D4510057D1D7 /* StatisticVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticVC.swift; sourceTree = "<group>"; };
 		097175B423D8DF1300072A06 /* MyFirstAppAdditional.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstAppAdditional.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		097175B723D8DF1300072A06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		097175B923D8DF1300072A06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				097175B723D8DF1300072A06 /* AppDelegate.swift */,
 				094312FB23E197AB0057D1D7 /* GameModel.swift */,
 				097175B923D8DF1300072A06 /* SceneDelegate.swift */,
+				094312FD23E1D4510057D1D7 /* StatisticVC.swift */,
 				097175BB23D8DF1300072A06 /* ViewController.swift */,
 				0972E42823E0D81E009EA276 /* SettingsVC.swift */,
 				097175BD23D8DF1300072A06 /* Main.storyboard */,
@@ -147,6 +150,7 @@
 				094312FC23E197AB0057D1D7 /* GameModel.swift in Sources */,
 				097175BC23D8DF1300072A06 /* ViewController.swift in Sources */,
 				0972E42923E0D81E009EA276 /* SettingsVC.swift in Sources */,
+				094312FE23E1D4510057D1D7 /* StatisticVC.swift in Sources */,
 				097175B823D8DF1300072A06 /* AppDelegate.swift in Sources */,
 				097175BA23D8DF1300072A06 /* SceneDelegate.swift in Sources */,
 			);

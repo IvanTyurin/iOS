@@ -9,8 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    var iosNum = Int.random(in: 0...100)
+    var minValue = 0
+    var maxValue = 0
+    var iosNum = 0
     var tryNumbers: Int = 0
     
     @IBOutlet weak var cheat: UILabel!
@@ -19,6 +20,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var gameBtnStates: UIButton!
     @IBOutlet weak var gameCounter: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let tabBar = tabBarController as! GameModel
+        minValue = tabBar.minValue
+        maxValue = tabBar.maxValue
+        
+        if minValue == maxValue {
+            mainText.text = "Настрой рандом, друже"
+        } else {
+            iosNum = getRandom(minValue, maxValue)
+            mainText.text = "Испытай свою удачу..."
+            cheat.text = String(iosNum)
+            tryNumbers = 0
+            gameCounter.text = "Количество попыток: " + String(tryNumbers)
+        }
+        
+    }
     
     @IBAction func gameBtn(_ sender: UIButton) {
         if let bufNum = userText.text {
@@ -38,26 +61,24 @@ class ViewController: UIViewController {
             mainText.text = "Ты забыл число!"
         }
         
+        print("*******************", "\n")
+        print(minValue)
+        print(maxValue)
+        print("*******************", "\n")
     }
     
     @IBAction func newGameBtn(_ sender: UIButton) {
-        iosNum = Int.random(in: 0...100)
+        viewDidAppear(true)
         gameBtnStates.isEnabled = true
         hiddenBtn.isHidden = true
         mainText.text = "Давай ещё разок?"
         cheat.text = String(iosNum)
-        tryNumbers = 0
-        gameCounter.text = "Количество попыток: " + String(tryNumbers)
+        /*tryNumbers = 0
+        gameCounter.text = "Количество попыток: " + String(tryNumbers)*/
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        mainText.text = "Испытай свою удачу..."
-        cheat.text = String(iosNum)
-        tryNumbers = 0
-        gameCounter.text = "Количество попыток: " + String(tryNumbers)
+    func getRandom(_ min: Int, _ max: Int) -> Int {
+        return Int.random(in: min...max)
     }
 }
 

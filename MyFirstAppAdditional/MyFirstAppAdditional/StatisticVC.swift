@@ -9,7 +9,8 @@
 import UIKit
 
 class StatisticVC: UIViewController {
-  
+    lazy var tabBar = tabBarController as! GameModel
+    
     @IBOutlet weak var bestTryLabel: UILabel!
     @IBOutlet weak var allTryLabel: UILabel!
     @IBOutlet weak var historyText: UITextView!
@@ -20,7 +21,7 @@ class StatisticVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let tabBar = tabBarController as! GameModel
+        
         var historyString = "История попыток: \n"
         
         if tabBar.history.isEmpty {

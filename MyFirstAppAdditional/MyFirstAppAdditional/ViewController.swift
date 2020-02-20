@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    lazy var tabBar = tabBarController as! GameModel
     var minValue = 0
     var maxValue = 0
     var iosNum = 0
@@ -29,7 +30,6 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        let tabBar = tabBarController as! GameModel
         minValue = tabBar.minValue
         maxValue = tabBar.maxValue
         
@@ -54,14 +54,11 @@ class ViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        let tabBar = tabBarController as! GameModel
         tabBar.history += historyBuf
         historyBuf = []
     }
     
-    @IBAction func gameBtn(_ sender: UIButton) {
-        let tabBar = tabBarController as! GameModel
-        
+    @IBAction func gameBtn(_ sender: UIButton) {        
         if let bufNum = userText.text {
             let userNum = Int(bufNum) ?? 0
             userText.text = nil

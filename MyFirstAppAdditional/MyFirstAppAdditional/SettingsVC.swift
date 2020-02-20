@@ -9,6 +9,8 @@
 import UIKit
 
 class SettingsVC: UIViewController {
+    lazy var tabBar = tabBarController as! GameModel
+    
     var minValue = 0
     var maxValue = 0
     
@@ -19,13 +21,11 @@ class SettingsVC: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tabBar = tabBarController as! GameModel
         minValueText.text = String(tabBar.minValue)
         maxValueText.text = String(tabBar.maxValue)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let tabBar = tabBarController as! GameModel
         minValue = tabBar.minValue
         maxValue = tabBar.maxValue
         minValueText.text = String(minValue)
@@ -33,7 +33,6 @@ class SettingsVC: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        let tabBar = tabBarController as! GameModel
         tabBar.minValue = minValue
         tabBar.maxValue = maxValue
     }

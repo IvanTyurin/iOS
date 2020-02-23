@@ -9,10 +9,7 @@
 import UIKit
 
 class SettingsVC: UIViewController {
-    lazy var tabBar = tabBarController as! GameModel
-    
-    var minValue = 0
-    var maxValue = 0
+    lazy var gameModel = tabBarController as! GameModel
     
     @IBOutlet weak var minValueText: UILabel!
     @IBOutlet weak var maxValueText: UILabel!
@@ -21,56 +18,26 @@ class SettingsVC: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        minValueText.text = String(tabBar.minValue)
-        maxValueText.text = String(tabBar.maxValue)
+        minValueText.text = String(gameModel.getRange().min)
+        maxValueText.text = String(gameModel.getRange().max)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        minValue = tabBar.minValue
-        maxValue = tabBar.maxValue
-        minValueText.text = String(minValue)
-        maxValueText.text = String(maxValue)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        tabBar.minValue = minValue
-        tabBar.maxValue = maxValue
+        super.viewWillAppear(true)
+        minValueText.text = String(gameModel.getRange().min)
+        maxValueText.text = String(gameModel.getRange().max)
     }
     
     @IBAction func safeButton(_ sender: UIButton) {
-        var min: Int?
-        var max: Int?
-        
-        guard let minValueIn = userMinValue.text else {
+        guard let minValueIn = userMinValue.text, let min = Int(minValueIn) else {
             return
         }
-        guard let maxValueIn = userMaxValue.text else {
+        guard let maxValueIn = userMaxValue.text, let max = Int(maxValueIn) else {
             return
         }
-        
-        min = Int(minValueIn)
-        max = Int(maxValueIn)
-        
-        if let min = min {
-            minValue = min
-        }
-        if let max = max {
-            maxValue = max
-        }
-        
-        minValueText.text = String(minValue)
-        maxValueText.text = String(maxValue)
-    }
-    
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        gameModel.setRange(min, max)
+        minValueText.text = String(gameModel.getRange().min)
+        maxValueText.text = String(gameModel.getRange().max)
     }
-    */
-
 }

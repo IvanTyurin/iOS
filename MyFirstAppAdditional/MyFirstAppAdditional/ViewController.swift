@@ -9,12 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    lazy var tabBar = tabBarController as! GameModel
-    var minValue = 0
-    var maxValue = 0
-    var iosNum = 0
-    var tryNumbers: Int = 0
-    var historyBuf: [Int] = []
+    private var minValue = 0
+    private var maxValue = 0
+    lazy var gameModel = tabBarController as! GameModel
     
     @IBOutlet weak var cheat: UILabel!
     @IBOutlet weak var mainText: UILabel!
@@ -26,62 +23,58 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewDidAppear(true)
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        minValue = tabBar.minValue
-        maxValue = tabBar.maxValue
+        super.viewDidAppear(true)
+        
+        minValue = gameModel.getRange().min
+        maxValue = gameModel.getRange().max
         
         if minValue == maxValue {
             mainText.text = "Настрой рандом, друже"
             userText.isEnabled = false
             gameBtnStates.isEnabled = false
-            gameCounter.text = "Количество попыток: " + String(tryNumbers)
+            gameCounter.text = "Количество попыток: " + String(gameModel.getTryNumber())
             
         } else {
-            iosNum = getRandom(minValue, maxValue)
             userText.isEnabled = true
             gameBtnStates.isEnabled = true
+            gameModel.setRandomNumber()
             
             userText.placeholder = "от " + String(minValue) + " до " + String(maxValue)
             mainText.text = "Испытай свою удачу..."
-            cheat.text = String(iosNum)
-            tryNumbers = 0
-            gameCounter.text = "Количество попыток: " + String(tryNumbers)
+            cheat.text = String(gameModel.getRandomNumber())
+            gameCounter.text = "Количество попыток: " + String(gameModel.getTryNumber())
         }
-        
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        tabBar.history += historyBuf
-        historyBuf = []
-    }
-    
-    @IBAction func gameBtn(_ sender: UIButton) {        
+    @IBAction func gameBtn(_ sender: UIButton) {
         if let bufNum = userText.text {
             let userNum = Int(bufNum) ?? 0
             userText.text = nil
-            tryNumbers += 1
-            gameCounter.text = "Количество попыток: " + String(tryNumbers)
-            historyBuf.append(userNum)
             
-            if  userNum == iosNum || userNum == 42 {
-                mainText.text = "Удача!"
-                hiddenBtn.isHidden = false
-                gameBtnStates.isEnabled = false
-                tabBar.tryCounter += tryNumbers
-                if tabBar.bestTry > tryNumbers || tabBar.bestTry == 0 {
-                    tabBar.bestTry = tryNumbers
-                }
-            } else if userNum > iosNum {
-                mainText.text = "Перебор!"
-            } else {
-                mainText.text = "Давай больше!"
+            switch gameModel.tryGuess(userNum) {
+                case .equal:
+                    mainText.text = "Удача!"
+                    hiddenBtn.isHidden = false
+                    gameBtnStates.isEnabled = false
+                    return
+                    
+                case .over:
+                    mainText.text = "Перебор!"
+                    return
+
+                case .less:
+                    mainText.text = "Давай больше!"
+                    return
+                
+                gameCounter.text = "Количество попыток: " + String(gameModel.getTryNumber())
             }
         } else {
             mainText.text = "Ты забыл число!"
         }
+        
     }
     
     @IBAction func newGameBtn(_ sender: UIButton) {
@@ -89,11 +82,8 @@ class ViewController: UIViewController {
         gameBtnStates.isEnabled = true
         hiddenBtn.isHidden = true
         mainText.text = "Давай ещё разок?"
-        cheat.text = String(iosNum)
-    }
-    
-    func getRandom(_ min: Int, _ max: Int) -> Int {
-        return Int.random(in: min...max)
+        cheat.text = String(gameModel.getRandomNumber())
+        gameModel.setRandomNumber()
     }
 }
 

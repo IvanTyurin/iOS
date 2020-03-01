@@ -30,6 +30,7 @@
 		097175C323D8DF1700072A06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		097175C523D8DF1700072A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0972E42823E0D81E009EA276 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		09804AC2240C4C9600BED14E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +164,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				097175BE23D8DF1300072A06 /* Base */,
+				09804AC2240C4C9600BED14E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

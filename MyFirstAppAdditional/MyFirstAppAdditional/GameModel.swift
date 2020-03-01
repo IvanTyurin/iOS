@@ -12,9 +12,9 @@ class GameModel: UITabBarController {
     private var trysCounter = 0
     private var bestTry = 0
     private var tryNumber = 0
-    private var minValue = 0
-    private var maxValue = 0
-    private var systemRandomNumber = 0
+    private var minValue = UserDefaults.standard.integer(forKey: "minUserValue")
+    private var maxValue = UserDefaults.standard.integer(forKey: "maxUserValue")
+    private var systemRandomNumber = UserDefaults.standard.integer(forKey: "randomNumber")
     private var history: [(Int, Int)] = []
     
     enum Result {
@@ -34,6 +34,7 @@ class GameModel: UITabBarController {
     
     public func setRandomNumber() -> () {
         systemRandomNumber = Int.random(in: minValue...maxValue)
+        UserDefaults.standard.set(systemRandomNumber, forKey: "randomNumber")
     }
     
     public func getRandomNumber() -> Int {

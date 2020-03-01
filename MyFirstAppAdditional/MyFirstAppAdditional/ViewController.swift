@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
         minValue = gameModel.getRange().min
         maxValue = gameModel.getRange().max
         
@@ -36,7 +35,6 @@ class ViewController: UIViewController {
             userText.isEnabled = false
             gameBtnStates.isEnabled = false
             gameCounter.text = "Количество попыток: " + String(gameModel.getTryNumber())
-            
         } else {
             userText.isEnabled = true
             gameBtnStates.isEnabled = true
@@ -45,7 +43,7 @@ class ViewController: UIViewController {
             userText.placeholder = "от " + String(minValue) + " до " + String(maxValue)
             mainText.text = "Испытай свою удачу..."
             cheat.text = String(gameModel.getRandomNumber())
-            gameCounter.text = "Количество попыток: " + String(gameModel.getTryNumber())
+            gameCounter.text = "R3R-Jc-J0v.placeholder" + String(gameModel.getTryNumber())
         }
     }
     

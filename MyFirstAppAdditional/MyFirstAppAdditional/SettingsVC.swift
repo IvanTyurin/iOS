@@ -15,12 +15,6 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var maxValueText: UILabel!
     @IBOutlet weak var userMinValue: UITextField!
     @IBOutlet weak var userMaxValue: UITextField!
-        
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        minValueText.text = String(gameModel.getRange().min)
-        maxValueText.text = String(gameModel.getRange().max)
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -37,6 +31,8 @@ class SettingsVC: UIViewController {
         }
 
         gameModel.setRange(min, max)
+        UserDefaults.standard.set(min, forKey: "minUserValue")
+        UserDefaults.standard.set(max, forKey: "maxUserValue")
         minValueText.text = String(gameModel.getRange().min)
         maxValueText.text = String(gameModel.getRange().max)
     }

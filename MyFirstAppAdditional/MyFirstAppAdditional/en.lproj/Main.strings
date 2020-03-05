@@ -1,0 +1,57 @@
+
+/* Class = "UITabBarItem"; title = "Статистика"; ObjectID = "4aK-xd-rTH"; */
+"4aK-xd-rTH.title" = "Статистика";
+
+/* Class = "UITabBarItem"; title = "Игра"; ObjectID = "5bR-FQ-DVB"; */
+"5bR-FQ-DVB.title" = "Игра";
+
+/* Class = "UIButton"; normalTitle = "Новая игра!"; ObjectID = "F8w-j9-LW7"; */
+"F8w-j9-LW7.normalTitle" = "Новая игра!";
+
+/* Class = "UITabBarItem"; title = "Настройки"; ObjectID = "FGj-lC-gSk"; */
+"FGj-lC-gSk.title" = "Настройки";
+
+/* Class = "UILabel"; text = "Всего попыток:"; ObjectID = "Hrs-un-5LL"; */
+"Hrs-un-5LL.text" = "Всего попыток:";
+
+/* Class = "UILabel"; text = "Макс. значение"; ObjectID = "J8d-tA-w8w"; */
+"J8d-tA-w8w.text" = "Макс. значение";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "K6c-Ya-nW2"; */
+"K6c-Ya-nW2.text" = "Label";
+
+/* Class = "UILabel"; text = "Мин. значение"; ObjectID = "Lcb-PH-Qro"; */
+"Lcb-PH-Qro.text" = "Мин. значение";
+
+/* Class = "UILabel"; text = "Лучшая попытка:"; ObjectID = "Lw5-p4-mS3"; */
+"Lw5-p4-mS3.text" = "Лучшая попытка:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MNh-tg-nof"; */
+"MNh-tg-nof.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Число"; ObjectID = "R3R-Jc-J0v"; */
+"R3R-Jc-J0v.placeholder" = "Число";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VhF-dY-dpB"; */
+"VhF-dY-dpB.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "c2P-Pb-L60"; */
+"c2P-Pb-L60.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Сохранить"; ObjectID = "haG-am-gf9"; */
+"haG-am-gf9.normalTitle" = "Сохранить";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "hjF-gg-LQs"; */
+"hjF-gg-LQs.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "huJ-qe-T22"; */
+"huJ-qe-T22.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Попытка"; ObjectID = "olY-0S-fux"; */
+"olY-0S-fux.normalTitle" = "Попытка";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uGP-l1-3F6"; */
+"uGP-l1-3F6.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "vAV-cz-OXl"; */
+"vAV-cz-OXl.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
